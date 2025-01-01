@@ -1,0 +1,187 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.baner{
+    position:relative;
+}
+#head{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content:space-between;
+      gap:0px;
+      background-color:#fff;
+      position:sticky;
+      top: 0;
+      left: 0;
+      right:0;
+      z-index: 999;
+      padding: 5px 50px 5px;
+}
+#head .head-logo img{
+    width: 120px;
+    height: 100px;
+}
+#head .head-list{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#head .head-list .nav-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#head .head-list .nav-list ul li{
+    list-style-type:none;
+    position: relative;
+    padding-right: 55px;
+}
+#head .nav-list ul a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    transition: 150ms ease;
+    z-index: 0;
+}
+.nav-list ul a::before{
+    content: "";
+    width: 59%;
+    height: 0px;
+   background-color:orange;
+   position: absolute;
+   top: -2px;
+   left: -4px;
+   transition: 0.2s ease-in-out;
+}
+.nav-list ul a::after{
+    content: "";
+    width: 59%;
+    height: 0px;
+   background-color:orange;
+   position: absolute;
+   bottom: -2px;
+   left: -4px;
+   transition: 0.2s ease-in-out;
+}
+.nav-list ul a:hover::after{
+    height: 60%;
+}
+.nav-list ul a:hover::before{
+    height: 60%;
+}
+.nav-list ul li a span{
+    position: relative;
+    z-index: 2;
+}
+.nav-list ul li a span:hover{
+       color: #fff;
+}
+
+
+ .content{
+    /* border: 2px solid; */
+    position: relative;
+    max-width: 700px;
+    align-items:flex-start;
+    justify-content: center;
+    padding: 150px;
+    padding-left: 90px;
+    margin-top: 100px;
+} 
+
+.content h2{
+    font-size: 5.5em;
+    color: #333;
+    transition: 0.5s;
+}
+.content h2 span{
+    color:orange ;
+    text-shadow: 1px  3px #333;
+}
+.content p{
+    background: linear-gradient(blue,red);
+    background-clip: text;
+    font-size: 1.3em;
+    color:transparent;
+    margin: 13px 0;
+    transition: 0.5s ;
+}
+.content button{
+    position:relative;
+    background:orange;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    font-size: 1.20em;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.content button::after{
+    content: "";
+    height: 100%;
+    width: 0%;
+    border-radius:10px ;
+    background : linear-gradient(to right,#666,#333);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 150ms ease-in-out;
+    z-index: 1;
+}
+.content button::before{
+    content: "";
+    height: 100%;
+    width: 0%;
+    border-radius:10px ;
+    background : linear-gradient(to right,#666,#333);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 150ms ease-in-out;
+    z-index: 1;
+}
+.content button span{
+    position: relative;
+    z-index: 2;
+}
+.content button:hover::after{
+    width: 100%;
+}
+.content button:hover::before{
+    width: 100%;
+}
+.content button:hover{
+    color: white;
+    box-shadow: 1px 2px 5px #666;
+}
+.content .chat {
+    background-color: white;
+    color: black;
+}
+.day-night{
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1.6em;
+
+}
