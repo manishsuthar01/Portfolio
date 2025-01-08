@@ -1,187 +1,460 @@
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-.baner{
-    position:relative;
+.baner {
+  position: relative;
 }
-#head{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content:space-between;
-      gap:0px;
-      background-color:#fff;
-      position:sticky;
-      top: 0;
-      left: 0;
-      right:0;
-      z-index: 999;
-      padding: 5px 50px 5px;
+body {
+  width: 100dvw;
+  height: 100dvh;
 }
-#head .head-logo img{
-    width: 120px;
-    height: 100px;
+#head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 5px 10px 5px;
 }
-#head .head-list{
- 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+#head .head-logo img {
+  max-width: 120px;
+  height: 100px;
+}
+#head .head-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 #head .head-list .nav-list ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-#head .head-list .nav-list ul li{
-    list-style-type:none;
-    position: relative;
-    padding-right: 55px;
+#head .head-list .nav-list ul li {
+  list-style-type: none;
+  position: relative;
+  padding-right:min(50px,5vw);
 }
-#head .nav-list ul a{
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 500;
-    color: black;
-    transition: 150ms ease;
-    z-index: 0;
+#head .nav-list ul a {
+  text-decoration: none;
+  font-size: clamp(1rem,1.6vw,3rem);
+  font-weight: 500;
+  color: black;
+  transition: 150ms ease;
+  z-index: 0;
 }
-.nav-list ul a::before{
-    content: "";
-    width: 59%;
-    height: 0px;
-   background-color:orange;
-   position: absolute;
-   top: -2px;
-   left: -4px;
-   transition: 0.2s ease-in-out;
+.nav-list ul a::before {
+  content: "";
+  width: 65%;
+  height: 0px;
+  background-color: orange;
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  transition: 0.2s ease-in-out;
 }
-.nav-list ul a::after{
-    content: "";
-    width: 59%;
-    height: 0px;
-   background-color:orange;
-   position: absolute;
-   bottom: -2px;
-   left: -4px;
-   transition: 0.2s ease-in-out;
+.nav-list ul a::after {
+  content: "";
+  width: 65%;
+  height: 0px;
+  background-color: orange;
+  position: absolute;
+  bottom: -2px;
+  left: -4px;
+  transition: 0.2s ease-in-out;
 }
-.nav-list ul a:hover::after{
-    height: 60%;
+.nav-list ul a:hover::after {
+  height: 60%;
 }
-.nav-list ul a:hover::before{
-    height: 60%;
+.nav-list ul a:hover::before {
+  height: 60%;
 }
-.nav-list ul li a span{
-    position: relative;
-    z-index: 2;
+.nav-list ul li a span {
+  position: relative;
+  z-index: 2;
 }
-.nav-list ul li a span:hover{
-       color: #fff;
+.nav-list ul li a span:hover {
+  color: #fff;
+}
+#frame {
+  /* background: green; */
+  border: 1px solid #9f8b8b;
+  height:auto;
+  width: 100dvw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
+#frame .content {
+  position: relative;
+  width: 80dvw;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: min(15rem,10%);
+}
 
- .content{
-    /* border: 2px solid; */
-    position: relative;
-    max-width: 700px;
-    align-items:flex-start;
-    justify-content: center;
-    padding: 150px;
-    padding-left: 90px;
-    margin-top: 100px;
-} 
-
-.content h2{
-    font-size: 5.5em;
-    color: #333;
-    transition: 0.5s;
+.content h2 {
+  font-size: clamp(0.1rem,5vw,3rem);
+  color: #333;
+  transition: 0.5s;
 }
-.content h2 span{
-    color:orange ;
-    text-shadow: 1px  3px #333;
+.content h2 #text {
+  font-size: clamp(1em,6vw,5.4rem);
+  color: orange;
+  text-shadow: 1px 3px #333;
+  animation-name: delete;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
 }
-.content p{
-    background: linear-gradient(blue,red);
-    background-clip: text;
-    font-size: 1.3em;
-    color:transparent;
-    margin: 13px 0;
-    transition: 0.5s ;
+@keyframes delete {
+  0% {
+    opacity: 0;
+    font-size: 0.5em;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    font-size: 1em;
+    transform: translateX(0px);
+  }
 }
-.content button{
-    position:relative;
-    background:orange;
-    color: black;
-    border: none;
-    outline: none;
-    padding: 15px 35px;
-    font-size: 1.20em;
-    letter-spacing: 0.05em;
-    margin-right: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
+.content p {
+  background: linear-gradient(blue, red);
+  background-clip: text;
+  font-size: clamp(0rem,2.5vw,1.5rem);
+  color: transparent;
+  margin: 19px 0;
+  transition: 0.5s;
 }
-.content button::after{
-    content: "";
-    height: 100%;
-    width: 0%;
-    border-radius:10px ;
-    background : linear-gradient(to right,#666,#333);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 150ms ease-in-out;
-    z-index: 1;
+.content button {
+  position: relative;
+  background: orange;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 15px 35px;
+  font-size: clamp(0.1rem,2.5vw,1.1rem);
+  letter-spacing: 0.05em;
+  margin: 2px;
+  margin-right: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
 }
-.content button::before{
-    content: "";
-    height: 100%;
-    width: 0%;
-    border-radius:10px ;
-    background : linear-gradient(to right,#666,#333);
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: 150ms ease-in-out;
-    z-index: 1;
+.content button::after {
+  content: "";
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #666, #333);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 150ms ease-in-out;
+  z-index: 1;
 }
-.content button span{
-    position: relative;
-    z-index: 2;
+.content button::before {
+  content: "";
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #666, #333);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 150ms ease-in-out;
+  z-index: 1;
 }
-.content button:hover::after{
-    width: 100%;
+.content button span {
+  position: relative;
+  z-index: 2;
 }
-.content button:hover::before{
-    width: 100%;
+.content button:hover::after {
+  width: 100%;
 }
-.content button:hover{
-    color: white;
-    box-shadow: 1px 2px 5px #666;
+.content button:hover::before {
+  width: 100%;
+}
+.content button:hover {
+  color: white;
+  box-shadow: 1px 2px 5px #666;
 }
 .content .chat {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
-.day-night{
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.5s;
-    font-size: 1.6em;
 
+#frame .im {
+  /* border: 2px solid; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#frame .im img {
+  width: 80%;
+  height: 30%;
+  position: relative;
+  top: 0px;
+  left: 35px;
+  border: 1px solid #d2afaf;
+  box-shadow: 5px 5px 15px #d2afaf;
+  border-radius: 50%;
+  background-position: center;
+  background-size:cover;
+}
+#frame .im h2 {
+  color: transparent;
+  background: linear-gradient(to left, blue, red);
+  background-clip: text;
+  text-align: center;
+  margin-top: 10px;
+  font-size: clamp(1rem,2.9vw,1.5rem);
+
+  padding: 10px -5px;
+}
+#frame .im h3 {
+  padding: 5px;
+  font-size: clamp(0.7rem,2.3vw,1.3rem);
+
+  text-align: center;
+  padding: 5px auto;
+  color: #333;
+}
+
+/* .day-night {
+  border: 2px solid;
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1.6em;
+} */
+
+#pro {
+  position: relative;
+  width: 100%;
+}
+#pro h1 {
+  padding: 20px;
+  background: linear-gradient(to left, red, blue);
+  color: transparent;
+  background-clip: text;
+  font-size:clamp(2rem,7vw,4rem);
+  text-align: center;
+}
+#pro .projects {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#pro .projects .project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid #d5c5c5;
+  border-radius: 10px;
+  max-width: 280px;
+  height: 350px;
+  margin: 5px;
+  background-color: #fff;
+}
+#pro .projects .project h2 {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: clamp(1.1rem,3vw,1.5rem);
+}
+#pro .projects .project span {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: clamp(0.9rem,2vw,1rem);
+}
+.project button {
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid #d2afaf;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+.project button::after {
+  border-radius: 10px;
+  background: linear-gradient(to right, #84879e, #3406e9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 0%;
+  height: 100%;
+  z-index: 1;
+  transition: width 0.1s linear;
+}
+.project button:hover::after {
+  z-index: 1;
+  width: 102%;
+  height: 105%;
+}
+.project button h3 {
+  position: relative;
+  color: black;
+  z-index: 6;
+}
+.project button:hover h3 {
+  color: #fff;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.project::before,
+.project::after {
+  z-index: -1;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background: conic-gradient(from var(--angle),transparent 70% ,blue);
+  filter: blur(2px);
+  opacity: 0.8;
+  animation: 2s spin linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+  }
+  50% {
+    --angle: 180deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+#skills {
+  /* border: 1px solid #d9b6b6; */
+  margin: 30px 20px;
+  position: relative;
+}
+#skills h2 {
+  background: linear-gradient(to left, red, blue);
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  font-size:clamp(2rem,7vw,4rem);
+  padding: 5px;
+  margin-top: 50px;
+}
+#skills .skill-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  height: 100%;
+}
+#skills .skill-list .skill {
+  border: 1px solid;
+  display:flex;
+  flex-direction: column;
+  border-radius: 15px;
+  width:min(80px,15%);
+  height:80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#skills .skill-list .skill span{
+  font-size: clamp(0.9rem,2vw,1rem);
+}
+#skills .skill-list .skill:hover {
+  box-shadow: 5px 4px 5px #d39e9e;
+  transform: scale(1.2);
+  background-color:#fff;
+  border: none;
+}
+
+#footer {
+  position: relative;
+  border: 1px solid #caabab;
+}
+#footer h1 {
+  padding: 20px 10px;
+  text-align: center;
+  font-size:clamp(2rem,7vw,4rem);
+  background: linear-gradient(to left, red, blue);
+  color: transparent;
+  background-clip: text;
+}
+#footer .comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#footer .comment input {
+  height: 80px;
+  width: 50%;
+}
+#footer .comment input {
+  position: relative;
+  font-size: 1em;
+}
+#footer .comment input:hover {
+  text-decoration: none;
+  box-shadow: 5px 4px 5px #d39e9e;
+}
+#footer .comment button {
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 60px;
+}
+#footer .comment button span {
+  font-weight: 540;
+}
+#footer .comment button:hover {
+  box-shadow: 5px 4px 5px #d39e9e;
+  cursor: pointer;
 }
